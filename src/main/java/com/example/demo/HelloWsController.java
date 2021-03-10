@@ -7,9 +7,9 @@ import reactor.core.publisher.Mono;
 @Controller
 class HelloWsController {
 
-    @ConnectMapping
+    @ConnectMapping("setup")
     public Mono<Void> connect() {
-        System.out.println("@ConnectMapping succeeded");
+        System.out.println("@ConnectMapping SETUP succeeded");
         return Mono.empty();
     }
 }

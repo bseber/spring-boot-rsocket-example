@@ -11,6 +11,10 @@ const client = new RSocketClient({
         lifetime: 999999,
         dataMimeType: "application/json",
         metadataMimeType: "message/x.rsocket.routing.v0",
+        payload: {
+            // data: "hello",
+            metadata: String.fromCharCode("setup".length) + "setup"
+        }
     },
     transport: new RSocketWebSocketClient(
         {
