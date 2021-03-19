@@ -28,4 +28,6 @@ const client = new RSocketClient({
 client.connect().then(socket => {
     console.log('websocket connection established.');
     console.log('have a look at the server log. maybe there is a @ConnectionMapping log.');
+}, (error) => {
+    console.error('could not connect websocket', error);
 })
