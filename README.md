@@ -12,7 +12,8 @@ The browser console should log something like "websocket connection established.
 The bash should log something like "ConnectMapping succeeded". (or not depends on the use case
 
 * commit `f90764a` works
-* commit `6d56bac` (the `main` branch) does not work (`@ConnectMapping` with a route)
+* commit `6d56bac` does not work (`@ConnectMapping` with a route)
+* `main` branch is configured and implemented correctly. `@ConnectMapping` with a route works as intended.
 
 ## ConnectMapping
 
@@ -55,6 +56,7 @@ const client = new RSocketClient({
 ## ConnectMapping with a route
 
 `@ConnectMapping` does not work when the client sends a payload with the SETUP frame:
+(commit #dec851f)
 
 ```java
 @Controller
@@ -92,3 +94,5 @@ const client = new RSocketClient({
     ),
 });
 ```
+
+`main` branch works as intended. please see last commits how do it correctly 🙂
