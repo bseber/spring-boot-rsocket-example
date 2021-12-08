@@ -8,7 +8,7 @@ import {
 } from "rsocket-core";
 import RSocketWebSocketClient from "rsocket-websocket-client";
 
-const config = {
+const client = new RSocketClient({
     serializers: {
         data: JsonSerializer,
         metadata: IdentitySerializer,
@@ -31,9 +31,7 @@ const config = {
         },
         BufferEncoders,
     ),
-};
-
-const client = new RSocketClient(config);
+});
 
 client.connect().then(socket => {
     console.log('websocket connection established.');
